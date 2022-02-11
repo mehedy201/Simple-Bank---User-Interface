@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Simple Bank user interface</title>
+</head>
+<body>
+    <header>
+        <section>
+            <div class="container mx-auto">
+                <div class="title">
+                    <h1 class="text-center text-5xl font-semibold mt-16 text-slate-600">Wellcome to my <span class="font-bold text-sky-600">Simple Bank</span></h1>
+                </div>
+                <div class="grid grid-cols-3 gap-4 mt-14">
+                    <!-- Deposit money ----------------- -->
+                    <div class="bg-gradient-to-r from-indigo-500 px-6 py-12 rounded-lg shadow-lg">
+                        <h2 class="text-3xl font-semibold text-white">Deposit Money</h2>
+                        <h2 class="text-5xl font-semibold mt-6 text-white">$<span id="deposite-money">00</span></h2>
+                    </div>
+                    <!-- Withdraw money ---------------- -->
+                    <div class="bg-gradient-to-r from-blue-500 px-6 py-12 rounded-lg shadow-lg">
+                        <h2 class="text-3xl font-semibold text-white">Withdraw Money</h2>
+                        <h2 class="text-5xl font-semibold mt-6 text-white">$<span id="withdraw-money">00</span></h2>
+                    </div>
+                    <!-- Current blance ---------------- -->
+                    <div class="bg-gradient-to-r from-yellow-500 px-6 py-12 rounded-lg shadow-lg">
+                        <h2 class="text-3xl font-semibold text-white">Current Blance</h2>
+                        <h2 class="text-5xl font-semibold mt-6 text-white">$<span id="current-blance">1000</span></h2>
+                    </diV>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container mx-auto mt-8">
+                <div class="grid grid-cols-2 gap-4 w-3/4 mx-auto">
+                    <!-- deposit area ---------------- -->
+                    <div class="bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-8 rounded-lg">
+                        <h2 class="text-4xl mb-3 font-semibold text-white">Please Deposit</h2>
+                        <input id="deposit-input" class="block border-0 rounded p-2 focus:outline-none w-3/4" type="text" placeholder="Please Deposite">
+                        <button id="deposit-button" class="py-1 px-5 font-bold text-white bg-none border-2 border-white rounded mt-3">Diposit</button>
+                    </div>
+                    <!-- withdraw area --------------- -->
+                    <div class="bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-8 rounded-lg">
+                        <h2 class="text-4xl mb-4 font-semibold text-white">Withdraw Money</h2>
+                        <input id="withdraw-input" class="block border-0 rounded p-2 focus:outline-none w-3/4" type="text" placeholder="Withdraw Money">
+                        <button id="withdraw-button" class="py-1 px-5 font-bold text-white bg-none border-2 border-white rounded mt-3">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <script>
+
+    </script>
+    <script src="js/index.js"></script>
+</body>
+</html>
