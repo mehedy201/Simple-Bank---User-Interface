@@ -52,6 +52,55 @@
             </div>
         </section>
     </header>
-    <script src="js/index.js"></script>
+
+    <script> 
+    // Using Function and redues code
+        function inputAmount (inputAmount){
+            const inputField = document.getElementById(inputAmount);
+            const inputAmountText = inputField.value;
+            const inputAmountParse = parseFloat(inputAmountText);
+            inputField.value = '';
+            return inputAmountParse;
+        }
+        function totalAmount (addAmount, totalAdd){
+            const amount = document.getElementById(addAmount);
+            const amountText = amount.innerText;
+            const amountParse = parseFloat(amountText);
+            const totalAmount = amountParse + totalAdd;
+            amount.innerText = totalAmount;
+            return totalAmount;
+        }
+        function updateBlance (update, isAdd){
+            const blance = document.getElementById('current-blance');
+            const blanceText = blance.innerText;
+            const blanceParse = parseFloat(blanceText);
+            if(isAdd == true){
+                blance.innerText = blanceParse + update;
+            }
+            else{
+                blance.innerText = blanceParse - update;
+            }
+        }
+
+        document.getElementById('deposit-button').addEventListener('click', function(){
+            // Get input Value
+            const depositeAmount = inputAmount('deposit-input');
+            // Add deposite money
+            const totolDepositeAmount = totalAmount ('deposite-money', depositeAmount);
+            // Update Main Blance
+            const currentBlanceAmount = updateBlance(depositeAmount, true);
+        });
+        document.getElementById('withdraw-button').addEventListener('click', function(){
+            // Get input Value
+            const withdrawAmount = inputAmount('withdraw-input');
+            // Add withdraw money
+            const totolWithdrawAmount = totalAmount ('withdraw-money', withdrawAmount);
+            // Update blance
+            const currentBlanceAmount = updateBlance(withdrawAmount, false);
+        });
+  
+    </script>
+
+    <!-- <script src="js/index.js"></script> -->
 </body>
 </html>

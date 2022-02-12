@@ -1,4 +1,10 @@
+// There ara no Function
+
+
+
 // Create Event handaler on deposite button
+/* 
+
 document.getElementById('deposit-button').addEventListener('click', function(){
     // Get input value in deposite
      const inputField = document.getElementById('deposit-input');
@@ -38,3 +44,4 @@ document.getElementById('withdraw-button').addEventListener('click', function(){
     withdrawCurrentBlance.innerText = updateBlanceAfterWithdraw;
 });
 
+ */
