@@ -86,17 +86,19 @@
             // Get input Value
             const depositeAmount = inputAmount('deposit-input');
             // Add deposite money
-            const totolDepositeAmount = totalAmount ('deposite-money', depositeAmount);
-            // Update Main Blance
-            const currentBlanceAmount = updateBlance(depositeAmount, true);
+            if (depositeAmount > 0){
+                totalAmount ('deposite-money', depositeAmount);
+                updateBlance(depositeAmount, true);
+            }
         });
         document.getElementById('withdraw-button').addEventListener('click', function(){
             // Get input Value
             const withdrawAmount = inputAmount('withdraw-input');
             // Add withdraw money
-            const totolWithdrawAmount = totalAmount ('withdraw-money', withdrawAmount);
-            // Update blance
-            const currentBlanceAmount = updateBlance(withdrawAmount, false);
+            if (withdrawAmount > 0){
+                totalAmount ('withdraw-money', withdrawAmount);
+                updateBlance(withdrawAmount, false);
+            }
         });
   
     </script>
