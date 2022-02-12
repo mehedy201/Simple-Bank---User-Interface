@@ -55,6 +55,7 @@
 
     <script> 
     // Using Function and redues code
+        // Input Amount
         function inputAmount (inputAmount){
             const inputField = document.getElementById(inputAmount);
             const inputAmountText = inputField.value;
@@ -62,6 +63,7 @@
             inputField.value = '';
             return inputAmountParse;
         }
+        // Total Amount
         function totalAmount (addAmount, totalAdd){
             const amount = document.getElementById(addAmount);
             const amountText = amount.innerText;
@@ -70,18 +72,26 @@
             amount.innerText = totalAmount;
             return totalAmount;
         }
-        function updateBlance (update, isAdd){
+        // Current Blance
+        function blanceTotal(){
             const blance = document.getElementById('current-blance');
             const blanceText = blance.innerText;
             const blanceParse = parseFloat(blanceText);
+            return blanceParse;
+        }
+        // Update Current Blance
+        function updateBlance (update, isAdd){
+             const blance = document.getElementById('current-blance');
+            const getCurrentBlance = blanceTotal();
             if(isAdd == true){
-                blance.innerText = blanceParse + update;
+                blance.innerText = getCurrentBlance + update;
             }
             else{
-                blance.innerText = blanceParse - update;
+                blance.innerText = getCurrentBlance - update;
             }
         }
 
+        // Get deposit Money
         document.getElementById('deposit-button').addEventListener('click', function(){
             // Get input Value
             const depositeAmount = inputAmount('deposit-input');
@@ -91,16 +101,21 @@
                 updateBlance(depositeAmount, true);
             }
         });
+        // Get withdraw Money
         document.getElementById('withdraw-button').addEventListener('click', function(){
             // Get input Value
             const withdrawAmount = inputAmount('withdraw-input');
+            // Main Blance
+            const currentBlance = blanceTotal();
             // Add withdraw money
-            if (withdrawAmount > 0){
+            if (withdrawAmount > 0 && withdrawAmount < currentBlance){
                 totalAmount ('withdraw-money', withdrawAmount);
                 updateBlance(withdrawAmount, false);
             }
+            if (withdrawAmount > currentBlance){
+                alert('You dont have money. Please deposite and withdraw')
+            }
         });
-  
     </script>
 
     <!-- <script src="js/index.js"></script> -->
